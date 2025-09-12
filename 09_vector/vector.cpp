@@ -72,10 +72,10 @@ void rotateRight(std::vector<int>& v, int k) {
     k %= v.size();
     while (k) {
         //get the last and insert at the beginning
-        v.insert(v.front(), v.end() - 1);
+        v.insert(v.begin(), v.back());
 
         //remove the last element
-        v.erase(v.back());
+        v.erase(v.end() - 1);
         k--;
     }
 }
@@ -87,7 +87,7 @@ void rotateLeft(std::vector<int>& v, int k) {
         v.insert(v.end() - 1, v.front());
 
         //remove the first element
-        v.erase(v.front());
+        v.erase(v.begin());
         k--;
     }
 }
